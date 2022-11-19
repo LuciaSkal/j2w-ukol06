@@ -24,9 +24,9 @@
             </div>
         </div>
 
-       <!-- <div class="mapa">
-            <iframe style="border:none" src="https://frame.mapy.cz/?q=" width="100%" height="100%" frameborder="0"></iframe>
-        </div> -->
+        <div class="mapa">
+            <iframe style="border:none" src="https://frame.mapy.cz/?q=${vizitka.getCelaAdresa()?url('ISO-8859-1')}" width="100%" height="100%" frameborder="0"></iframe>
+        </div>
 
         [@c.back /]
     </div>

@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import java.time.LocalDate;
 
 /**
  * Entita obsahující údaje zobrazené na vizitce.
@@ -42,7 +43,6 @@ public class Vizitka {
     public Vizitka() {
     }
 
-    @Id
     public Long getId() {
         return id;
     }
@@ -115,8 +115,7 @@ public class Vizitka {
         this.web = web;
     }
 
-    /*public String getCelaAdresa() {
-        return ulice + ", " + psc + " " + obec;
-    }*/
-
+    public String getCelaAdresa() {
+        return ulice + obec;
+    }
 }
