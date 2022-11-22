@@ -25,9 +25,14 @@
         </div>
 
         <div class="mapa">
-            <iframe style="border:none" src="https://frame.mapy.cz/?q=${vizitka.getCelaAdresa()?url('ISO-8859-1')}" width="100%" height="100%" frameborder="0"></iframe>
+            <iframe style="border:none" src="https://frame.mapy.cz/?q=${vizitka.getCelaAdresa()?url('UTF-8')}" width="100%" height="100%" frameborder="0"></iframe>
         </div>
 
+        [@form.form method="post" bind="vizitka"]
+        [#if vizitka.id??]
+            <button type="submit" class="btn" name="akce" value="smazat">Smazat</button>
+        [/#if]
+        [/@form.form]
         [@c.back /]
     </div>
 [/@c.page]

@@ -31,8 +31,8 @@ a {
 .vizitka {
     width: 36em;
     height: 16em;
-    border: 1px solid gray;
-    background-color: white;
+    border: 5px solid gray;
+    background-color: antiquewhite;
     margin: 1em;
     padding: 1.5em;
     box-shadow: 5px 5px 10px black;
@@ -135,4 +135,9 @@ input {
 
 .error {
     color: red;
+}
+
+.btn {
+    color: white;
+    background-color: red;
 }

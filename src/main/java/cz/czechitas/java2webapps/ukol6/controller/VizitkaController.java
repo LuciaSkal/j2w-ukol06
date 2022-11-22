@@ -33,14 +33,14 @@ public class VizitkaController {
     }
 
     @GetMapping("/")
-    public ModelAndView getList() {
+    public ModelAndView seznam() {
         ModelAndView ModelAndView = new ModelAndView("seznam");
         ModelAndView.addObject("seznam", vizitkaRepository.findAll());
         return ModelAndView;
     }
 
     @GetMapping("/nova")
-    public Object addNew() {
+    public ModelAndView nova() {
         return new ModelAndView("formular")
                 .addObject("vizitka", new Vizitka());
     }
@@ -55,7 +55,7 @@ public class VizitkaController {
     }
 
     @GetMapping("/{id:[0-9]+}")
-    public Object getDetail(@PathVariable long id) {
+    public Object detail(@PathVariable long id) {
         Optional<Vizitka> vizitka = vizitkaRepository.findById(id);
         if (vizitka.isEmpty()) {
             return ResponseEntity.notFound().build();
@@ -64,5 +64,9 @@ public class VizitkaController {
                 .addObject("vizitka", vizitka.get());
 
     }
-
+    @PostMapping(value = "/{id:[0-9]+}", params = "akce=smazat")
+    public Object smazat(@PathVariable long id) {
+        vizitkaRepository.deleteById(id);
+        return "redirect:/";
+    }
 }

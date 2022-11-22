@@ -116,6 +116,6 @@ public class Vizitka {
     }
 
     public String getCelaAdresa() {
-        return ulice + obec;
+        return ulice + ", " + psc + " " + obec;
     }
 }
